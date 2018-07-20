@@ -17,6 +17,15 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    signingConfigs {
+        release {
+            storeFile file("msappcenterkeystore.jks")
+            storePassword "appcenter"
+            keyAlias "appcenter"
+            keyPassword "appcenter"
+        }
+
+    }
 }
 
 dependencies {
