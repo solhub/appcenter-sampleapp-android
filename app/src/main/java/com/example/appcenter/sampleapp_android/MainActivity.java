@@ -10,7 +10,7 @@ import android.support.v7.app.AppCompatActivity;
 import com.microsoft.appcenter.AppCenter;
 import com.microsoft.appcenter.analytics.Analytics;
 import com.microsoft.appcenter.crashes.Crashes;
-
+import com.microsoft.appcenter.push.Push;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -20,8 +20,11 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        
+        Push.setListener(new MyPushListener());
+        
         AppCenter.start(getApplication(), "b85da6f1-278d-412c-bb8b-1cdd8a8c8a2a",
-                Analytics.class, Crashes.class);
+                Analytics.class, Crashes.class,Push.class);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_root);
 
@@ -31,6 +34,12 @@ public class MainActivity extends AppCompatActivity {
         mViewPager.setAdapter(mSectionsPagerAdapter);
     }
 
+    @Override
+    protected void onNewIntent(Intent intent) {
+        super.onNewIntent(intent);
+        Push.checkLaunchedFromNotification(this, intent);
+    }
+    
     public class SectionsPagerAdapter extends FragmentPagerAdapter {
 
         public SectionsPagerAdapter(FragmentManager fm) {
