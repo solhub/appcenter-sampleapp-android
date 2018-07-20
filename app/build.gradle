@@ -22,7 +22,7 @@ android {
             storeFile file("msappcenterkeystore.jks")
             storePassword "appcenter"
             keyAlias "appcenter"
-            keyPassword "appcenter"
+            keyPassword "appcenter1"
         }
 
     }
