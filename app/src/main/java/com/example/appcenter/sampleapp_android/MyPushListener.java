@@ -1,5 +1,5 @@
 public class MyPushListener implements PushListener {
-
+/*
     @Override
     public void onPushNotificationReceived(Activity activity, PushNotification pushNotification) {
 
@@ -31,4 +31,5 @@ public class MyPushListener implements PushListener {
             Toast.makeText(activity, String.format(activity.getString(R.string.push_toast), customData), Toast.LENGTH_LONG).show(); // For example R.string.push_toast would be "Push clicked with data=%1s"
         }
     }
-});
+}
+*/
