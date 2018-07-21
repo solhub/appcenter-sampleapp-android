@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onNewIntent(Intent intent) {
         super.onNewIntent(intent);
-        //Push.checkLaunchedFromNotification(this, intent);
+        Push.checkLaunchedFromNotification(this, intent);
     }
     
     public class SectionsPagerAdapter extends FragmentPagerAdapter {
