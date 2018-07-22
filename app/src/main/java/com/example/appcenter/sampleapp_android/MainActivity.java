@@ -1,12 +1,12 @@
 package com.example.appcenter.sampleapp_android;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
-import android.content.Intent;
 
 import com.microsoft.appcenter.AppCenter;
 import com.microsoft.appcenter.analytics.Analytics;
@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         
-        //Push.setListener(new MyPushListener());
+        Push.setListener(new MyPushListener());
         
         AppCenter.start(getApplication(), "b85da6f1-278d-412c-bb8b-1cdd8a8c8a2a",
                 Analytics.class, Crashes.class,Push.class);
