@@ -1,5 +1,5 @@
-public class MyPushListener implements PushListener {
 /*
+public class MyPushListener implements PushListener {
     @Override
     public void onPushNotificationReceived(Activity activity, PushNotification pushNotification) {
 
