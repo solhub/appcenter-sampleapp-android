@@ -33,6 +33,10 @@ public class MainActivity extends AppCompatActivity {
 
         mViewPager = (ViewPager) findViewById(R.id.container);
         mViewPager.setAdapter(mSectionsPagerAdapter);
+        
+        CustomProperties properties = new CustomProperties();
+        properties.set("customProp1", "customVal1").set("customProp2", 10);
+        AppCenter.setCustomProperties(properties);
     }
 
     @Override
